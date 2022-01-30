@@ -41,7 +41,7 @@ userRouter.post('/login' , async(req, res) => {
     }
 })
 
-
+// email verification
 userRouter.get('/verify/:id/:verCode', async (req, res) => {
     try {
         const user = await User.findById(req.params.id)

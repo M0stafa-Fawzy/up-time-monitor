@@ -15,6 +15,7 @@ const ping = (url, interval, name='') => {
     return monitor
 }
 
+// start a check for a specific url
 checkRouter.post('/checks', auth, async (req, res) => {
     try{
         const check = new Check({
@@ -87,6 +88,7 @@ checkRouter.patch('/checks/:id', auth, async (req, res) => {
     }
 })
 
+// pause or stop a check  process
 checkRouter.get('/checks/:id', auth, async (req, res) => {
     try{
         const check = await Check.findOne({_id: req.params.id, owner:req.user._id})

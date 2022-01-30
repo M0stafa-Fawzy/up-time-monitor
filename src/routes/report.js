@@ -3,7 +3,7 @@ const Check = require('../models/check')
 const auth = require('../middleware/auth')
 const reportRouter = new express.Router()
 
-
+// get a check report by its id
 reportRouter.get('/report/:id', auth, async (req, res) => {
     try{
         let totalResTime = 0
@@ -30,7 +30,7 @@ reportRouter.get('/report/:id', auth, async (req, res) => {
     }
 })
 
-
+// get checks reports by tags name
 reportRouter.get('/reports/:tags', auth, async (req, res) => {
     try{
         const reports = []
