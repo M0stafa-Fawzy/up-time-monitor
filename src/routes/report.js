@@ -59,5 +59,4 @@ reportRouter.get('/reports/:tags', auth, async (req, res) => {
     }
 })
 
-
 module.exports = reportRouter
